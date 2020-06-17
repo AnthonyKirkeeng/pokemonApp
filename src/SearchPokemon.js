@@ -28,25 +28,26 @@ class SearchPokemon extends React.Component
         event.preventDefault();
         this.setState({value: this.state.newValue});
     }
+    
+    
 
     render() {
-        // if (!this.state.newData['abilities']){
-        //     return null
-        // }
+
 
         return (
           <div>
-          <form onSubmit={this.handleSubmit}>
-            <label>
-              Who's that Pokemon :
-              <p></p>
-              <textarea value={this.state.newValue} onChange={this.handleChange} />
-            </label>
-            <input type="submit" value="Submit"  />
-          </form>
+            <form onSubmit={this.handleSubmit}>
+                <label>
+                Who's that Pokemon?!
+                <p></p>
+                <textarea value={this.state.newValue} onChange={this.handleChange} />
+                </label>
+                <input type="submit" value="Submit"  />
+            </form>
+            
           <div className='container'>
                 <h2>{this.props.name}</h2>
-                {/* <Pokemon data={this.state} /> */}
+                <Pokemon data={this.state.value.toLowerCase()} />
             </div>
           </div>
         );
