@@ -22,15 +22,14 @@ function Pokemon(props)
 
     return(
         <div className="info">
+            <h1>{pokemon['name'][0].toUpperCase() + pokemon['name'].slice(1)}</h1>
+            <p></p>
             {<img src={imgSrc} id='pokemon-img'></img>}
-            <ul>Abilities: 
-                {/* Abilities 
-                <li>{pokemon['abilities'].map(ability => ability['ability']['name'][0].toUpperCase() + ability['ability']['name'].slice(1) + ' ')}</li> */}
+            <ul>Abilities:               
                 {abilities}
             </ul>
             <ul>
-                Type(s)
-                {/* <li>{pokemon['types'].map(types => types['type']['name'][0].toUpperCase() + types['type']['name'].slice(1) + ' ')}</li> */}
+                Type(s)               
                 {types}
             </ul>
 

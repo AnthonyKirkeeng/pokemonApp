@@ -23,11 +23,11 @@ render() {
           <header className="App-header">
           <nav>
             <h1>hi</h1>
-            {/* <h1>{this.state.pokemonData[1]}</h1> */}
+           
           </nav>
           <SearchPokemon data={this.state.pokemonData}/>
           
-          {/* <GetPokemon name={'squirtle'}/> */}
+          
           </header>
         </div>
       );
