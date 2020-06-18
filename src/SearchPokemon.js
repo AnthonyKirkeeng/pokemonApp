@@ -36,12 +36,18 @@ class SearchPokemon extends React.Component
         event.preventDefault();
         let imgArray = []
         for (let i = 1; i < 151; i++){
-           imgArray.push(<img src={`https://pokeres.bastionbot.org/images/pokemon/${i}.png`} id='random-poke'></img>)}
+           imgArray.push(<img src={`https://pokeres.bastionbot.org/images/pokemon/${i}.png`} className='random-poke' id={`${i}`} onClick={this.handleImg}></img>)}
            this.setState({imgArr: imgArray})
         this.setState({checkVal: 1})   
-        
-        
+    }
 
+    handleImg = (event) => {
+        if(this.state){
+        // event.preventDefault();
+        // this.setState({value: event.target.value.id})
+        this.setState({value: event.target.id})
+        this.setState({checkVal: 2})
+        }
     }
     
 
@@ -51,6 +57,9 @@ class SearchPokemon extends React.Component
             returnData = this.state.imgArr
         }
         if (this.state.checkVal === 0){
+            returnData = <Pokemon data={this.state.value.toLowerCase()} />
+        }
+        if (this.state.checkVal === 2){
             returnData = <Pokemon data={this.state.value.toLowerCase()} />
         }
         
