@@ -65,18 +65,24 @@ class SearchPokemon extends React.Component
         }
         
         return (
-          <div>
+          <div className='page'>
+            <nav className='top-bar'>
+                <h1>Pokédex</h1>
+                <button onClick={this.handleAll}>View Pokédex</button>
+                <div className="search">
+                    <form onSubmit={this.handleSubmit}>
+                        <label>
+                        <textarea value={this.state.newValue} onChange={this.handleChange} />
+                        </label>
+                        <input type="submit" value="Search"  />
+                    </form>
+                </div>
+                
+            </nav>
+            
+          <div className='container'>
             Who's that Pokémon?!
             <p></p>
-            <form onSubmit={this.handleSubmit}>
-                <label>
-                <textarea value={this.state.newValue} onChange={this.handleChange} />
-                </label>
-                <input type="submit" value="Submit"  />
-            </form>
-            <button onClick={this.handleAll}>View Pokédex</button>
-            <p></p>
-          <div className='container'>
                 {returnData}
             </div>
           </div>
