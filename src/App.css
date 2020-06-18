@@ -32,6 +32,10 @@
   width: 40%;
   height: 40%;
 }
+#random-poke{
+  width: 11%;
+  height: 11%;
+}
 
 @keyframes App-logo-spin {
   from {
