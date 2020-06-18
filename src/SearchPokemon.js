@@ -32,7 +32,7 @@ class SearchPokemon extends React.Component
     handleAll = (event) => {
         event.preventDefault();
         let imgArray = []
-        for (let i = 1; i < 151; i++){
+        for (let i = 1; i < 152; i++){
            imgArray.push(<img src={`https://pokeres.bastionbot.org/images/pokemon/${i}.png`} className='random-poke' id={`${i}`} onClick={this.handleImg}></img>)}
 
         this.setState({imgArr: imgArray})
@@ -65,13 +65,13 @@ class SearchPokemon extends React.Component
           <div>
             <form onSubmit={this.handleSubmit}>
                 <label>
-                Who's that Pokemon?!
+                Who's that Pokémon?!
                 <p></p>
                 <textarea value={this.state.newValue} onChange={this.handleChange} />
                 </label>
                 <input type="submit" value="Submit"  />
             </form>
-            <button onClick={this.handleAll}>Show All</button>
+            <button onClick={this.handleAll}>View Pokédex</button>
           <div className='container'>
                 {returnData}
             </div>

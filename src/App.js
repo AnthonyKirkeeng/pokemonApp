@@ -22,7 +22,7 @@ render() {
         <div className="App">
           <header className="App-header">
           <nav>
-            <h1>hi</h1>
+            <h1>Pokédex</h1>
            
           </nav>
           <SearchPokemon data={this.state.pokemonData}/>
