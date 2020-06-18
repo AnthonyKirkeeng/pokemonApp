@@ -27,6 +27,7 @@ class SearchPokemon extends React.Component
         event.preventDefault();
         this.setState({value: this.state.newValue});
         this.setState({checkVal: 0})
+        this.setState({newValue: ''})
         
     }
     handleAll = (event) => {
@@ -36,13 +37,15 @@ class SearchPokemon extends React.Component
            imgArray.push(<img src={`https://pokeres.bastionbot.org/images/pokemon/${i}.png`} className='random-poke' id={`${i}`} onClick={this.handleImg}></img>)}
 
         this.setState({imgArr: imgArray})
-        this.setState({checkVal: 1})   
+        this.setState({checkVal: 1})
+        this.setState({newValue: ''})   
     }
 
     handleImg = (event) => {
         if(this.state){
         this.setState({value: event.target.id})
         this.setState({checkVal: 2})
+        this.setState({newValue: ''})
         }
     }
     
@@ -63,15 +66,16 @@ class SearchPokemon extends React.Component
         
         return (
           <div>
+            Who's that Pokémon?!
+            <p></p>
             <form onSubmit={this.handleSubmit}>
                 <label>
-                Who's that Pokémon?!
-                <p></p>
                 <textarea value={this.state.newValue} onChange={this.handleChange} />
                 </label>
                 <input type="submit" value="Submit"  />
             </form>
             <button onClick={this.handleAll}>View Pokédex</button>
+            <p></p>
           <div className='container'>
                 {returnData}
             </div>
